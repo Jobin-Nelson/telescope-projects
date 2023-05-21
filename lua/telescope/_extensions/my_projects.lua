@@ -5,8 +5,8 @@ if not telescope_ok then
 end
 
 return telescope.register_extension {
-  setup = require('projects.config').setup,
+  setup = require('my_projects.config').setup,
   exports = {
-    projects = require('projects')
+    my_projects = require('my_projects')
   },
 }

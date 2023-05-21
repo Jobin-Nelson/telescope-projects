@@ -3,7 +3,7 @@ local finders = require('telescope.finders')
 local actions = require('telescope.actions')
 local action_state = require('telescope.actions.state')
 local conf = require('telescope.config').values
-local project_dir = require('projects.config').project_dir
+local my_project_dir = require('my_projects.config').project_dir
 
 local function get_projects(dir)
   dir = vim.fs.normalize(dir)
@@ -29,7 +29,7 @@ return function(opts)
   pickers.new(opts, {
     prompt_title = 'Projects',
     finder = finders.new_table({
-      results = get_projects(project_dir),
+      results = get_projects(my_project_dir),
       entry_maker = function(entry)
         return {
           value = entry,
