@@ -3,11 +3,7 @@ local config = {}
 config.project_dir = ''
 
 config.setup = function(opts)
-  if opts['project_dir'] == nil then
-    error('project_dir is required')
-  end
-
-  config.project_dir = opts.project_dir
+  config.project_dir = opts.project_dir or '~/playground/projects'
 end
 
 return config
