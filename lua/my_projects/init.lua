@@ -24,8 +24,8 @@ local function get_projects(dir)
   return projects
 end
 
-return function(opts)
-  opts = opts or require('telescope.themes').get_dropdown()
+return function(_)
+  local opts = require('telescope.themes').get_dropdown()
   pickers.new(opts, {
     prompt_title = 'Projects',
     finder = finders.new_table({
